@@ -1,17 +1,33 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require('mongoose')
-const Product = require('../model/product')
+const mongoose = require("mongoose");
+const {
+  createProduct,
+  getProducts,
+  getProductById,
+  updateProduct,
+  deleteProduct,
+} = require("../controller/product.model");
+const Product = require("../model/product");
 
-//Handle GET request for products
-router.get("/", (req, res) => {
+//Handle GET request for all products
+router.get(
+  "/",
+  getProducts
+
+  /* (req, res) => {
   res.status(200).json({
     msg: "This is a GET request for products",
   });
-});
+} */
+);
 
 //Handle POST request for product
-router.post("/", (req, res) => {
+router.post(
+  "/",
+  createProduct
+
+  /* (req, res) => {
   //body parser will make the following properties available
   // console.log(req.body)
   // console.log(req.body.name)
@@ -42,10 +58,15 @@ product.save().then((res)=>{
     statusMsg: "Product created successfully",
     product : product
   });
-});
+} */
+);
 
 //GET request for single product
-router.get("/:productId", (req, res) => {
+router.get(
+  "/:productId",
+  getProductById
+
+  /* (req, res) => {
   const id = req.params.productId;
   if (id === "7") {
     res.status(200).json({
@@ -56,26 +77,38 @@ router.get("/:productId", (req, res) => {
       msg: "You have a regular id with no cashback",
     });
   }
-});
+} */
+);
 
 //Handle PUT request
 
-router.put("/:productId",(req,res)=>{
-    const id = req.params.productId
-res.status(200).json({
-    msg : "This is a PUT request for product",
-    id:id
-})
-})
+router.put(
+  "/:productId",
+  updateProduct
+
+  /* (req, res) => {
+  const id = req.params.productId;
+  res.status(200).json({
+    msg: "This is a PUT request for product",
+    id: id,
+  });
+});
+*/
+);
 
 //Handle delete request
 
-router.delete('/:productId',(req,res)=>{
-    const id = req.params.productId
-    res.status(200).json({
-        msg : 'This is a delete request for product',
-        id:id
-    })
-})
+router.delete(
+  "/:productId",
+  deleteProduct
+
+  /* (req, res) => {
+  const id = req.params.productId;
+  res.status(200).json({
+    msg: "This is a delete request for product",
+    id: id,
+  });
+} */
+);
 
 module.exports = router;

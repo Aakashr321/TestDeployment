@@ -50,11 +50,9 @@ Response:
   > Create a model
   >Save data to mongo atlas using mongoose
   
-
-  23-03-2023
-  Deploy nodejs application (API) to cloudbase server
-
-  1. Upload our rest api to Github
-  2. Create a new account on http://www.cyclic.sh
-  3. Connect the github repo to the cyclic app
-  4. The app will be deployed.
+  >CRUD operations
+  POST : product.save()
+  GET(all): Product.find()
+  GET(single): Product.findById(id)
+  PUT: Product.findByIdAndUpdate
+  DELETE: Product.findByIdAndDelete()
