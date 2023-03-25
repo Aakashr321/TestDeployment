@@ -1,0 +1,60 @@
+/* REST API : REpresentational state transfer */
+/* Endpoint are URL's that represents a particular resource */
+
+/* GET Employee
+  http://www.fbs.com/api/employees
+Response:
+  Data of all employees in JSON format
+[GET an Employee]
+  http://www.fbs.com/api/employee/101
+Response:
+  Data of employee with id = 101
+[POST an Employee]
+  http://www.fbs.com/api/employees
+  Pass JSON data/payload to be added (in request body)
+[PUT an employee]
+  http://www.fbs.com/api/employees
+  Pass JSON data to be updated (in request body)
+  Response : Data of updated employee
+[DELETE an Employee]
+  http://www.fbs.com/api/employees/105
+  Response : Delete employee with id 105
+
+  Create our own REST API
+  1. Create a new folder
+  2. Install required (express, dotenv, nodemon)
+  3. Implement app.js to send a JSON Response
+  4. Use app.js in server.js to  create the server and listen to incoming requests
+ 
+#Test the REST API  
+  1. Install the thunderclient plugin for VSCode
+  2. Use POSTMAN
+
+#Design for our API
+  /products                   /orders
+  GET, POST                   GET, POST
+
+  /products/{id}              /orders/{id}
+  GET , PUT , DELETE          GET , PUT , DELETE
+
+  1. Create a products.js to implement product route
+  2. Used it in app.js
+  3. Create a command to start our app (Update in package.json)
+
+  >Body parser (Middleware)
+
+
+  >To use mongoose, we need to define model, also known as Schema
+  >Schema is the structure of our data (which we want to read/update/CRUD operations)
+
+  > Create a model
+  >Save data to mongo atlas using mongoose
+  
+
+  23-03-2023
+  Deploy nodejs application (API) to cloudbase server
+
+  1. Upload our rest api to Github
+  2. Create a new account on http://www.cyclic.sh
+  3. Connect the github repo to the cyclic app
+  4. The app will be deployed.
